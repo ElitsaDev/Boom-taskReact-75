@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const [node, setNode] = useState("");
+  const [node, setNode] = useState( window.localStorage.getItem("node")|| ""); 
 
   useEffect(() => {
     window.localStorage.setItem("node", node);
@@ -24,7 +24,7 @@ function App() {
         <button className="button is-large is-primary is-active" 
                 onClick={() => window.localStorage.setItem("node", node)}>Save</button>
         <button className="button is-large" 
-                onClick={() => window.localStorage.clear()}>Clear</button>
+                onClick={() => setNode("")}>Clear</button>
       </div>
     </div>
   );

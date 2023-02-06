@@ -1,8 +1,8 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [node, setNode] = useState( window.localStorage.getItem("node")|| ""); 
+  const [node, setNode] = useState(window.localStorage.getItem("node") || "");
 
   useEffect(() => {
     window.localStorage.setItem("node", node);
@@ -21,10 +21,10 @@ function App() {
             />
           </div>
         </div>
-        <button className="button is-large is-primary is-active" 
-                onClick={() => window.localStorage.setItem("node", node)}>Save</button>
-        <button className="button is-large" 
-                onClick={() => setNode("")}>Clear</button>
+        <button className="button is-large is-primary is-active"
+          onClick={() => window.localStorage.setItem("node", node)}>Save</button>
+        <button className="button is-large"
+          onClick={() => setNode("")}>Clear</button>
       </div>
     </div>
   );
